@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Academic Events - Fatima University</title>
+    <link rel="stylesheet" href="styles/events.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="home.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="contacts.html">Contacts</a></li>
+          <li><a href="navbar.html">Student Organizations</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="overlay"></div>
+      <div class="hero-content">
+        <h1>Academic Events</h1>
+      </div>
+    </section>
+
+    <section class="events-container">
+      <h2>📚 Academic Calendar</h2>
+      <div class="event-details">
+        <h3>Midterm Exams - March 25-29</h3>
+        <p>
+          Prepare for your midterm exams, which will take place from March 25 to
+          29. Be sure to check the schedule for your specific courses and make
+          sure you know the venues.
+        </p>
+        <ul>
+          <li>📍 Location: Various classrooms</li>
+          <li>🕒 Time: 9:00 AM - 12:00 PM</li>
+        </ul>
+        <img
+          src="path-to-your-image.jpg"
+          alt="Midterm Exams"
+          class="event-image"
+        />
+      </div>
+
+      <div class="event-details">
+        <h3>Final Exams - May 15-20</h3>
+        <p>
+          Get ready for the final exams scheduled for May 15 to 20. Don't forget
+          to review all course materials and check for any updates or changes.
+        </p>
+        <ul>
+          <li>📍 Location: Various classrooms</li>
+          <li>🕒 Time: 9:00 AM - 12:00 PM</li>
+        </ul>
+        <img
+          src="path-to-your-image.jpg"
+          alt="Final Exams"
+          class="event-image"
+        />
+      </div>
+
+      <div class="event-details">
+        <h3>Enrollment for Next Semester - June 1-10</h3>
+        <p>
+          Enrollment for the upcoming semester will begin on June 1. Make sure
+          you review the course offerings and plan your schedule ahead of time.
+        </p>
+        <ul>
+          <li>📍 Location: Online Registration</li>
+          <li>🕒 Time: 8:00 AM - 5:00 PM</li>
+        </ul>
+        <img
+          src="path-to-your-image.jpg"
+          alt="Enrollment"
+          class="event-image"
+        />
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>&copy; 2025 Fatima University. All Rights Reserved.</p>
+    </footer>
+
+    <div id="navbar-container"></div>
+    <script>
+      fetch("navbar.html")
+        .then((response) => response.text())
+        .then(
+          (data) =>
+            (document.getElementById("navbar-container").innerHTML = data)
+        );
+    </script>
+  </body>
+</html>
