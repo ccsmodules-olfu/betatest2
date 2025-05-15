@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Non-Academic Events - Fatima University</title>
+    <link rel="stylesheet" href="styles/events.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="home.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="contacts.html">Contacts</a></li>
+          <li><a href="navbar.html">Student Organizations</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="overlay"></div>
+      <div class="hero-content">
+        <h1>Non-Academic Events</h1>
+      </div>
+    </section>
+
+    <section class="events-container">
+      <h2>🎉 Non-Academic Events</h2>
+
+      <div class="event-details">
+        <h3>Talent Show - April 5</h3>
+        <p>
+          Come join us for a fun and exciting talent show where students will
+          showcase their unique talents. Whether it's singing, dancing, or
+          comedy, there's something for everyone!
+        </p>
+        <ul>
+          <li>📍 Location: Main Auditorium</li>
+          <li>🕒 Time: 7:00 PM</li>
+          <li>🎟️ Entry: Free (but limited seating)</li>
+        </ul>
+        <img
+          src="path-to-your-image.jpg"
+          alt="Talent Show"
+          class="event-image"
+        />
+      </div>
+
+      <div class="event-details">
+        <h3>Sports Fest - April 12-15</h3>
+        <p>
+          Join the annual Sports Fest where students from different departments
+          compete in various sports events. It's a great opportunity for fun,
+          team building, and sportsmanship!
+        </p>
+        <ul>
+          <li>📍 Location: Sports Complex</li>
+          <li>🕒 Time: 9:00 AM - 5:00 PM each day</li>
+          <li>🎟️ Entry: Free</li>
+        </ul>
+        <img
+          src="path-to-your-image.jpg"
+          alt="Sports Fest"
+          class="event-image"
+        />
+      </div>
+
+      <div class="event-details">
+        <h3>Cultural Night - May 2</h3>
+        <p>
+          Celebrate the diversity of our university at Cultural Night! Students
+          from different cultures will perform traditional dances, music, and
+          showcase their heritage.
+        </p>
+        <ul>
+          <li>📍 Location: Cultural Hall</li>
+          <li>🕒 Time: 6:00 PM</li>
+          <li>🎟️ Entry: Free</li>
+        </ul>
+        <img
+          src="path-to-your-image.jpg"
+          alt="Cultural Night"
+          class="event-image"
+        />
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>&copy; 2025 Fatima University. All Rights Reserved.</p>
+    </footer>
+
+    <div id="navbar-container"></div>
+    <script>
+      fetch("navbar.html")
+        .then((response) => response.text())
+        .then(
+          (data) =>
+            (document.getElementById("navbar-container").innerHTML = data)
+        );
+    </script>
+  </body>
+</html>

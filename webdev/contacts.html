@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacts - Fatima University</title>
+    <link rel="stylesheet" href="styles/contacts.css" />
+    <script src="script.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="home.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="contacts.html" class="active">Contacts</a></li>
+          <li><a href="navbar.html">Student Organizations</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Organizations Contact Section -->
+    <section class="contact-container">
+      <h2>Contact Information</h2>
+      <p>Get in touch with us!:</p>
+
+      <div class="contact-info">
+        <h3>FCMS:</h3>
+        <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <a href="mailto:fcms.ccs.val@gmail.com">fcms.ccs.val@gmail.com</a>
+        </div>
+        <div class="contact-item">
+          <i class="fab fa-facebook"></i>
+          <a
+            href="https://www.facebook.com/profile.php?id=61565990177216"
+            target="_blank"
+            >FCMS Facebook Page</a
+          >
+        </div>
+      </div>
+
+      <div class="contact-info">
+        <h3>CCS:</h3>
+        <div class="contact-item">
+          <i class="fab fa-facebook"></i>
+          <a
+            href="https://www.facebook.com/groups/ccsvalenzuela"
+            target="_blank"
+            >CCS Facebook Page</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Floating Contact Bar (Fixed to Right Middle) -->
+    <div class="floating-contact-bar">
+      <h3>Our Contacts</h3>
+      <div class="contact-item contact-hover">
+        <i class="fas fa-envelope"></i>
+        <span>Our Email</span>
+        <div class="contact-popup">
+          <p>email1@gmail.com</p>
+          <p>email2@gmail.com</p>
+          <p>email3@gmail.com</p>
+          <p>email4@gmail.com</p>
+          <p>email5@gmail.com</p>
+        </div>
+      </div>
+      <div class="contact-item contact-hover">
+        <i class="fab fa-facebook"></i>
+        <span>Our FB</span>
+        <div class="contact-popup">
+          <p>facebook.com/profile1</p>
+          <p>facebook.com/profile2</p>
+          <p>facebook.com/profile3</p>
+          <p>facebook.com/profile4</p>
+          <p>facebook.com/profile5</p>
+        </div>
+      </div>
+      <div class="contact-item contact-hover">
+        <i class="fab fa-instagram"></i>
+        <span>Our IG</span>
+        <div class="contact-popup">
+          <p>instagram.com/handle1</p>
+          <p>instagram.com/handle2</p>
+          <p>instagram.com/handle3</p>
+          <p>instagram.com/handle4</p>
+          <p>instagram.com/handle5</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Address Section -->
+    <div class="address">
+      <p>
+        <i class="fas fa-map-marker-alt"></i>
+        <a
+          href="https://www.google.com/maps/search/?api=1&query=120+MacArthur+Hwy,+Metro+Manila,+Valenzuela,+Philippines"
+          target="_blank"
+        >
+          120 MacArthur Hwy, Metro Manila, Valenzuela, Philippines
+        </a>
+      </p>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>&copy; 2025 Fatima University. All Rights Reserved.</p>
+    </footer>
+
+    <div id="navbar-container"></div>
+    <script>
+      fetch("navbar.html")
+        .then((response) => response.text())
+        .then(
+          (data) =>
+            (document.getElementById("navbar-container").innerHTML = data)
+        );
+    </script>
+  </body>
+</html>

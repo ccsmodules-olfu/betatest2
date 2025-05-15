@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - Fatima University</title>
+    <link rel="stylesheet" href="styles/about.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="home.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="contacts.html">Contacts</a></li>
+          <li><a href="navbar.html">Student Organizations</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="about-hero">
+      <div class="overlay"></div>
+      <div class="hero-content">
+        <h1>About Us</h1>
+      </div>
+    </section>
+
+    <section class="info-section">
+      <h2>Our Mission</h2>
+      <p>
+        The College of Computer Studies aims to provide innovative and quality
+        instruction to the advancement of technology, intends to develop an
+        entrepreneurial learning environment towards sustainability and growth;
+        and develops responsible and morally upright citizens.
+      </p>
+    </section>
+
+    <section class="info-section">
+      <h2>Our Vision</h2>
+      <p>
+        We are committed to provide accessible, responsive, and quality
+        Information Technology Education (ITE) programs and to become the
+        Institution of choice in producing competent and responsible IT
+        professionals who are sensitive to the needs and demands of the
+        industry.
+      </p>
+    </section>
+
+    <section class="info-section">
+      <h2>CCS Program Educational Objectives (PEO) & Program Outcomes (PO)</h2>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Program Educational Objectives (PEO)</th>
+              <th>Program Outcomes (PO)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                Participates in various IT organizations and contributes to
+                individual development.
+              </td>
+              <td>
+                Engages in professional organizational activities and continuous
+                learning for IT skills development.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Exercises personal, interpersonal, and technical competence in
+                the IT profession.
+              </td>
+              <td>
+                Establishes a professional career comparable to well-known IT
+                professionals through self-determination, focus, and
+                perseverance.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Undertakes continuing studies and/or certification exams
+                applicable to the field of specialization.
+              </td>
+              <td>
+                Engages in lifelong IT education through active and empowered
+                learning.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Adheres to the ethical and moral standards of ACM and IEEE
+                professional code of conduct.
+              </td>
+              <td>
+                Fulfills IT professional roles with a deep sense of moral and
+                social responsibility.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Uses information communication technology as a tool to develop
+                innovative business solutions.
+              </td>
+              <td>
+                Possesses leadership in the business community in pursuing IT
+                advancement.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>&copy; 2025 Fatima University. All Rights Reserved.</p>
+    </footer>
+
+    <div id="navbar-container"></div>
+    <script>
+      fetch("navbar.html")
+        .then((response) => response.text())
+        .then(
+          (data) =>
+            (document.getElementById("navbar-container").innerHTML = data)
+        );
+    </script>
+  </body>
+</html>

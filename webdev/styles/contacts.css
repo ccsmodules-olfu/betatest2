@@ -1,0 +1,217 @@
+/* General Styles */
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background: url("../assets/images/campus.jpg") no-repeat center center fixed;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Background Overlay for Dimming */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+/* Header Styles */
+header {
+  background: #800000;
+  padding: 15px 0;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-links li {
+  margin: 0 20px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: #ffcc00;
+  transform: translateY(-3px);
+}
+
+/* Contact Section */
+.contact-container {
+  max-width: 700px;
+  margin: 120px auto 40px;
+  text-align: center;
+  padding: 25px;
+  color: rgb(255, 255, 255);
+  position: relative;
+}
+
+.contact-container h2 {
+  color: #ffffff;
+  font-size: 26px;
+  margin-bottom: 15px;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  margin-top: 15px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+}
+
+.contact-item a {
+  font-size: 17px;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+}
+
+.contact-item a:hover {
+  color: #800000;
+}
+
+/* Floating Contact Bar */
+.floating-contact-bar {
+  position: fixed;
+  top: 50%;
+  right: 15px; /* Moved to the right side */
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 1000;
+}
+
+.floating-contact-bar .contact-icon img {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.floating-contact-bar .contact-icon:hover img {
+  transform: scale(1.1);
+}
+
+/* Tooltip Styling */
+.contact-tooltip {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  white-space: nowrap;
+  display: none;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+/* Contact Popup Styling */
+.contact-popup {
+  display: none;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 14px;
+  top: 10%;
+  left: -150px; /* Positioned to the left */
+  transform: translateY(-50%);
+  white-space: nowrap;
+  z-index: 1000;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0;
+}
+
+.contact-hover:hover .contact-popup {
+  display: block;
+  opacity: 1;
+}
+
+/* Delay the hiding of the popup */
+.contact-hover .contact-popup {
+  pointer-events: none;
+}
+
+.contact-hover:hover .contact-popup {
+  pointer-events: auto;
+}
+
+/* Footer */
+.footer {
+  background: #800000;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-size: 14px;
+}
+
+.footer p {
+  margin: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .contact-container {
+    width: 90%;
+  }
+
+  .floating-contact-bar {
+    right: 10px; /* Adjusted for mobile screens */
+  }
+
+  .floating-contact-bar .contact-icon img {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+.address a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.address a:hover {
+  color: #800000;
+}

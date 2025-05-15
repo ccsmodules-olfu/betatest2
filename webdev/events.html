@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events - Fatima University</title>
+    <link rel="stylesheet" href="styles/events.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="home.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="events.html" class="active">Events</a></li>
+          <li><a href="contacts.html">Contacts</a></li>
+          <li><a href="navbar.html">Student Organizations</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="overlay"></div>
+      <div class="hero-content">
+        <h1>Upcoming Events</h1>
+      </div>
+    </section>
+
+    <!-- Events Section with Card Layout and Text Section -->
+    <section class="events-container">
+      <!-- Event Cards Section -->
+      <div class="event-cards">
+        <!-- Event Card 1 -->
+        <div class="event-card">
+          <img
+            src="path/to/your/image1.jpg"
+            alt="Event Image"
+            class="event-image"
+          />
+          <div class="event-info">
+            <h3>📚 Academic Calendar</h3>
+            <p>Important dates for upcoming exams and enrollments.</p>
+            <a href="academic-events.html" class="learn-more">Learn More</a>
+          </div>
+        </div>
+
+        <!-- Event Card 2 -->
+        <div class="event-card">
+          <img
+            src="path/to/your/image2.jpg"
+            alt="Event Image"
+            class="event-image"
+          />
+          <div class="event-info">
+            <h3>🎤 Talent Show</h3>
+            <p>Show off your talent on April 5th.</p>
+            <a href="non-academic-events.html" class="learn-more">Learn More</a>
+          </div>
+        </div>
+
+        <!-- Event Card 3 -->
+        <div class="event-card">
+          <img
+            src="path/to/your/image3.jpg"
+            alt="Event Image"
+            class="event-image"
+          />
+          <div class="event-info">
+            <h3>⚽ Sports Fest</h3>
+            <p>Get ready for the Sports Fest on April 12-15.</p>
+            <a href="non-academic-events.html" class="learn-more">Learn More</a>
+          </div>
+        </div>
+
+        <!-- Add more event cards here as needed -->
+      </div>
+
+      <!-- Text Section (for remaining space) -->
+      <div class="text-section">
+        <h2>Event Details</h2>
+        <p>
+          Get to know all the exciting events happening at Fatima University.
+          Stay updated on academic, non-academic, and sports activities. Don't
+          miss out on the chance to participate and make the most of your
+          university experience!
+        </p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>&copy; 2025 Fatima University. All Rights Reserved.</p>
+    </footer>
+
+    <div id="navbar-container"></div>
+    <script>
+      fetch("navbar.html")
+        .then((response) => response.text())
+        .then(
+          (data) =>
+            (document.getElementById("navbar-container").innerHTML = data)
+        );
+    </script>
+  </body>
+</html>
