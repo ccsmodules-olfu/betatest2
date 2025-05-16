@@ -4,28 +4,180 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login | Fatima University</title>
-    <link rel="stylesheet" href="styles/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(to right, #800000, #a52a2a);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .login-container {
+        background-color: #fff;
+        padding: 40px 30px;
+        border-radius: 16px;
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        width: 100%;
+        max-width: 400px;
+        animation: fadeIn 0.6s ease;
+        position: relative;
+      }
+
+      .logo {
+        width: 100px;
+        margin: 0 auto 20px;
+        display: block;
+        border-radius: 50%;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      h2 {
+        color: #800000;
+        margin-bottom: 8px;
+        font-weight: 600;
+      }
+
+      .subtext {
+        font-size: 14px;
+        color: #555;
+        margin-bottom: 20px;
+      }
+
+      form input[type="email"],
+      form input[type="password"] {
+        width: 100%;
+        padding: 14px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        font-size: 16px;
+      }
+
+      form input:focus {
+        border-color: #800000;
+        outline: none;
+      }
+
+      form button {
+        width: 100%;
+        padding: 14px;
+        background-color: #800000;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        font-size: 16px;
+        cursor: pointer;
+        margin-top: 10px;
+        transition: background-color 0.3s ease;
+      }
+
+      form button:hover {
+        background-color: #990000;
+      }
+
+      .forgot-password {
+        margin-top: 12px;
+      }
+
+      .forgot-password a {
+        color: #800000;
+        text-decoration: none;
+        font-size: 14px;
+      }
+
+      .forgot-password a:hover {
+        text-decoration: underline;
+      }
+
+      #login-error {
+        display: none;
+        color: red;
+        margin-top: 10px;
+        font-size: 14px;
+      }
+
+      footer {
+        text-align: center;
+        font-size: 12px;
+        color: #aaa;
+        margin-top: 20px;
+      }
+
+      @media (max-width: 500px) {
+        .login-container {
+          margin: 0 20px;
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
     <script src="script.js" defer></script>
   </head>
   <body>
-    <div class="login-container">
-      <h2>Login</h2>
-      <form id="login-form">
+    <div class="login-container" role="main" aria-label="Login form container">
+      <img
+        src="assets/images/fatimaccslogo.jfif"
+        alt="Fatima University Logo"
+        class="logo"
+      />
+      <h2>Welcome Back</h2>
+      <p class="subtext">Log in using your Fatima University credentials</p>
+
+      <form id="login-form" aria-describedby="login-error" novalidate>
         <input
           type="email"
           id="email"
-          placeholder="Enter your Fatima Email"
+          name="email"
+          placeholder=" Enter your Fatima Email"
           required
+          aria-required="true"
+          aria-label="Email address"
+          autocomplete="email"
         />
         <input
           type="password"
           id="password"
-          placeholder="Enter your password"
+          name="password"
+          placeholder=" Enter your password"
           required
+          aria-required="true"
+          aria-label="Password"
+          autocomplete="current-password"
         />
-        <button type="submit">Login</button>
+        <button type="submit" aria-label="Login to Fatima University account">
+          Login
+        </button>
+        <div class="forgot-password">
+          <a href="#" aria-label="Forgot password link">Forgot password?</a>
+        </div>
+        <div id="login-error" role="alert" aria-live="assertive">
+          Invalid email or password.
+        </div>
       </form>
+
+      <footer>&copy; 2025 Fatima University. All rights reserved.</footer>
     </div>
-    <script src="script.js"></script>
   </body>
 </html>

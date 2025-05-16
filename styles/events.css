@@ -219,3 +219,56 @@ header {
     margin-left: 0; /* Remove left margin on small screens */
   }
 }
+
+/* Dropdown Styles */
+.nav-links .dropdown {
+  position: relative;
+}
+
+.nav-links .dropdown-menu {
+  display: none;
+  position: absolute;
+  background: #800000;
+  list-style: none;
+  padding: 10px 0;
+  width: 200px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav-links .dropdown-menu li {
+  padding: 10px;
+  position: relative;
+}
+
+.nav-links .dropdown-menu a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  transition: background 0.3s ease;
+}
+
+.nav-links .dropdown-menu a:hover {
+  background: #ffcc00;
+  color: black;
+}
+
+.nav-links .dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Style for Submenu under FCMS */
+.sub-menu {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  background: #800000;
+  list-style: none;
+  padding: 10px 0;
+  width: 200px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-menu li:hover > .sub-menu {
+  display: block;
+}

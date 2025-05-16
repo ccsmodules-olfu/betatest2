@@ -190,3 +190,18 @@ header {
 .dropdown-menu li:hover > .sub-menu {
   display: block;
 }
+
+.hero {
+  height: 90vh; /* a bit smaller than full height but still substantial */
+  padding: 15px;
+}
+
+.hero h1,
+.hero h2 {
+  font-size: 2rem; /* medium-large text */
+  margin: 0.4em 0;
+}
+
+.hero::before {
+  background: rgba(128, 0, 0, 0.6); /* subtle dark overlay */
+}

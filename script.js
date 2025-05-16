@@ -82,21 +82,30 @@ document.addEventListener("DOMContentLoaded", function () {
   // Initialize Showing All Events
   showEvents("all");
 
-  // Login Form Validation
+  // Login Form Validation with inline message instead of alert
   const loginForm = document.getElementById("login-form");
-  if (loginForm) {
+  const loginError = document.getElementById("login-error");
+
+  if (loginForm && loginError) {
     loginForm.addEventListener("submit", function (event) {
       event.preventDefault();
       const email = document.getElementById("email").value.trim();
       const password = document.getElementById("password").value.trim();
 
-      if (validateEmail(email) && password.length > 5) {
-        alert("Login Successful!");
-        window.location.href = "home.html";
+      const validPassword = "SURNAME-OLFU-VAL"; // Your actual password
+
+      if (validateEmail(email) && password === validPassword) {
+        loginError.style.display = "none";
+        loginError.style.color = "green";
+        loginError.textContent = "Login Successful! Redirecting...";
+        setTimeout(() => {
+          window.location.href = "home.html";
+        }, 1000);
       } else {
-        alert(
-          "Invalid login. Please use your Fatima Gmail and a valid password."
-        );
+        loginError.style.display = "block";
+        loginError.style.color = "red";
+        loginError.textContent =
+          "Invalid login. Please use your Fatima Gmail and the correct password.";
       }
     });
   }

@@ -23,10 +23,11 @@ header {
   margin: 0;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .nav-links li {
-  margin: 0 20px;
+  margin: 0 15px;
 }
 
 .nav-links a {
@@ -44,14 +45,26 @@ header {
 
 /* Hero Section */
 .about-hero {
-  background: #800000; /* Solid maroon background */
+  background-image: url("../assets/images/about-hero.jfif"); /* Update path if needed */
+  background-color: #800000;
+  background-size: cover;
+  background-position: center;
   height: 60vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  color: white;
   position: relative;
+  overflow: hidden;
+}
+
+.about-hero .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 0;
 }
 
 .hero-content {
@@ -59,7 +72,10 @@ header {
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 2px;
-  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  color: #fff;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+  position: relative;
+  z-index: 1;
 }
 
 /* Info Sections */
@@ -67,8 +83,8 @@ header {
   padding: 60px 20px;
   text-align: center;
   background: #f8f8f8;
-  margin: 20px auto;
-  max-width: 800px;
+  margin: 40px auto;
+  max-width: 900px;
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
@@ -76,25 +92,18 @@ header {
 .info-section h2 {
   color: #800000;
   font-size: 28px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .info-section p {
   color: #333;
   font-size: 18px;
+  line-height: 1.6;
 }
 
-/* Footer */
-.footer {
-  background: #800000;
-  color: white;
-  text-align: center;
-  padding: 20px;
-  margin-top: 50px;
-}
-
+/* Table Styles */
 .table-container {
-  width: 90%;
+  width: 95%;
   margin: 20px auto;
   overflow-x: auto;
 }
@@ -111,6 +120,7 @@ td {
   border: 1px solid #800000;
   padding: 15px;
   text-align: left;
+  vertical-align: top;
 }
 
 th {
@@ -127,4 +137,119 @@ tr:hover {
   background: #ffcc00;
   color: #800000;
   transition: 0.3s;
+}
+
+/* Footer */
+.footer {
+  background: #800000;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 50px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-content {
+    font-size: 32px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  th,
+  td {
+    font-size: 14px;
+  }
+
+  .info-section h2 {
+    font-size: 22px;
+  }
+
+  .info-section p {
+    font-size: 16px;
+  }
+}
+
+/* Hero Animation */
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.about-hero {
+  animation: fadeSlideIn 1.2s ease-out both;
+}
+
+.hero-content {
+  font-size: 48px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 1;
+  animation: fadeSlideIn 1.5s ease-out both;
+  animation-delay: 0.3s;
+}
+
+/* Dropdown Styles */
+.nav-links .dropdown {
+  position: relative;
+}
+
+.nav-links .dropdown-menu {
+  display: none;
+  position: absolute;
+  background: #800000;
+  list-style: none;
+  padding: 10px 0;
+  width: 200px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav-links .dropdown-menu li {
+  padding: 10px;
+  position: relative;
+}
+
+.nav-links .dropdown-menu a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  transition: background 0.3s ease;
+}
+
+.nav-links .dropdown-menu a:hover {
+  background: #ffcc00;
+  color: black;
+}
+
+.nav-links .dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Style for Submenu under FCMS */
+.sub-menu {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  background: #800000;
+  list-style: none;
+  padding: 10px 0;
+  width: 200px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-menu li:hover > .sub-menu {
+  display: block;
 }
